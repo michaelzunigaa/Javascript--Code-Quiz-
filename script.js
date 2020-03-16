@@ -1,9 +1,11 @@
-var questionArr = [];
-var score = [];
+var correct = 0;
+
+var score = 0;
 
 
 
 
+var Question = document.getElementById("display-question");
 
 
 var answerA = document.getElementById("choice-1");
@@ -15,15 +17,63 @@ var buttonA = document.getElementById("btn-a");
 var buttonB = document.getElementById("btn-b");
 var buttonC = document.getElementById("btn-c");
 var buttonD = document.getElementById("btn-d");
+var startButton = document.getElementById("btn-start");
+
+var questions = [
+    {
+        Question: 'Which one of these is a boolean in JavaScript?',
+        answers: [
+            {text:"true" , correct: true},
+            {text:"possible" , correct: false},
+            {text:"go" , correct: false},
+            {text:"maybe" , correct: false}
+        ],
+
+         Question1: 'Where does the script tag gi in the html file?',
+         answers1:[
+             {text:'body', correct: true},
+             {text:'header', correct: false},
+             {text:'title', correct: false},
+             {text:'footer', correct:false}
+         ],   
+         Question2: 'Which of thesr is not a CSS proerty?',
+         answers2:[
+            {text:'font-size', correct: false},
+            {text:'background-color', correct: false},
+            {text:'function()', correct: true},
+            {text:'margin-align', correct:false}
+         ]
+        
+
+        
+
+
+
+
+        }
+];
+
+
+
+
+
 
 buttonA.addEventListener("click" , function () {
     console.log("Hi!");
-    
-});
 
-buttonB.addEventListener("click", buttonB );
-buttonC.addEventListener("click" , buttonC);
-buttonD.addEventListener("click", buttonD );
+    }
+    
+);
+startButton.addEventListener("click" , function () {
+   document.getElementsByClassName("display-question").style.display = "visible";
+
+    
+}
+);
+
+// buttonC.addEventListener("click" , buttonC);
+// buttonD.addEventListener("click", buttonD );
+
 
 
 
@@ -31,10 +81,11 @@ buttonD.addEventListener("click", buttonD );
 
 
 function getQuestions() {
-    
 }
 
-function displalQuestion() {
+buttonB.addEventListener("click", getQuestions() );
+
+function displayQuestion() {
      
     
 }
@@ -51,3 +102,4 @@ function trackScore() {
 
 
 
+getQuestions();
