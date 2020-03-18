@@ -3,7 +3,8 @@ body{
 }
 .jumbotron{
     margin-top: 10rem;
-    margin-left: 15rem;
+    margin-right: auto;
+    margin-left: auto;
     max-width: 70%;
     align-self: center;
 
