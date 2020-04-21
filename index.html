@@ -7,42 +7,55 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 
   <title>Code Quiz!</title>
-</head>
-
-<body>
-
 
   <div class="jumbotron">
-    <h1 class="display" id="display4">Code Quiz</h1>
-    <button class="btn btn-danger btn-lg" id="start-quiz" role="button">START</button><br>
-    <!-- <p class="lead">Question!</p> -->
+    <h1 class="display-question" id="question-display">Code Quiz</h1>
 
-
-    <p class="display-question" id="start"></p>
-
-    <hr class="my-4">
+    <button class="btn-dark btn-lg" id="start-btn" role="button">START</button><br>
     <div class="row">
-
-      <a class="btn btn-dark btn-md" id="btn-a" onclick="getQuestions()
-      
-      " role="button">A</a>
-
-      <a class="btn btn-dark btn-md" id="btn=d" onclick="checkAnswer('d')" role="button">d</a>
-
-
+      <a class="btn btn-dark btn-lg" id="btn-a" role="button"></a>
+      <a class="btn btn-dark btn-lg" id="btn-b" role="button"></a>
     </div>
     <div class="row">
-
-      <a class="btn btn-dark btn-md" id="btn-c" onclick="checkAnswer('c')" role="button">c</a>
-
-      <a class="btn btn-dark btn-md" id="btn-b" onclick="checkAnswer('b')" role="button">b</a>
-
+      <a class="btn btn-dark btn-lg" id="btn-c" role="button"></a>
+      <a class="btn btn-dark btn-lg" id="btn-d" role="button"></a>
+     
     </div>
   </div>
 
 
 
-  <script src="assets/script.js"></script>
+
+
+  </div>
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- <p class="display-question" id="question-display">Yooo</p> -->
+    <div class="row">
+
+      <div class="col-6" id="timer-display">Timer:0</div>
+      <div class="col-6" id="score-display">Score:0</div>
+    </div>
+
+    <hr class="my-4">
+
+
+
+  </div>
+
+
+
+</body>
+
+
+<script src="assets/script.js"></script>
+
+</html>

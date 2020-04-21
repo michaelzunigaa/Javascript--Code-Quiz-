@@ -5,8 +5,8 @@ var timeLeft = 30;
 var time = document.getElementById('display4');
 // var timeId = setInterval(countdown, 1000);
 
-var questionStart = document.getElementById("start");
-var startButton = document.getElementById("btn-start");
+var questionDisplay = document.getElementById("#question-display");
+// var startButton = document.getElementById("#start-btn");
 
 // var answerA = document.getElementById("choice-1");
 // var answerB = document.getElementById("choice-2");
@@ -17,20 +17,45 @@ var startButton = document.getElementById("btn-start");
 // var buttonC = document.getElementById("btn-c");
 // var buttonD = document.getElementById("btn-d");
 
-const startQuiz = document.querySelector("#start-quiz");
+// const startQuiz = document.querySelector("#start-quiz");
 
-function startGame() {
-    console.log("started");
+// function startGame() {
+//     console.log("started");
 
-    questionStart.style.visibility = "visible";
-
-
-}
-startButton.addEventListener('click', startGame);
+//     questionDisplay.style.visibility = "visible";
 
 
+// }
+// startQuiz.addEventListener('click', startGame);
+document.querySelector("#start-btn").addEventListener("click", function(event){
+    event.stopPropagation();
+
+    // startTimer();
+    document.querySelector("#start-btn").style.visibility ="hidden";
+    document.querySelector("#question-display").style.visibility ="visible";
+    document.querySelector("#btn-a").style.visibility ="visible";
+    document.querySelector("#btn-b").style.visibility ="visible";
+    document.querySelector("#btn-c").style.visibility ="visible";
+    document.querySelector("#btn-d").style.visibility ="visible";
+   
+    
+    console.log("hello");
+    displayQs();
+    
 
 
+
+
+
+
+   
+    
+    
+});
+
+
+
+let shuffledQuestions, currentQuestionIndex
 
 
 
@@ -67,6 +92,28 @@ var questions = [{
 ];
 
 
+function displayQs(){
+    shuffledQuestions = questions.sort(() => Math.random() - ".5");
+    currentQuestionIndex = 0;
+
+    document.querySelector("#question-display").innerHTML = shuffledQuestions[0].question;
+    document.querySelector("#btn-a").innerHTML = questions[0].choices[0];
+    document.querySelector("#btn-b").innerHTML = questions[0].choices[1];
+    document.querySelector("#btn-c").innerHTML = questions[0].choices[2];
+    document.querySelector("#btn-d").innerHTML = questions[0].choices[3];
+    getNextQuestion();
+
+}
+
+function startTimer(){
+
+}
+
+function getNextQuestion(){
+
+}
+
+
 
 
 
@@ -78,99 +125,9 @@ var questions = [{
 
 var lastQuestion = questions.length - 1;
 
-var runningQuestion = 0;
-
-function checkAnswer() {
-    if (questions[runinngQuestionIndex], correct == true)
-        score++;
-}
-answerIscorrect();
 
 
+var questionTime = 10;
 
+var TIMER;
 
-
-
-buttonA.addEventListener("click", function () {
-
-    }
-
-
-
-
-
-
-
-);
-
-
-
-document.getElementById("btn-start").addEventListener("click", function () {
-    questionStart.style.display = "visible";
-
-
-});
-
-// buttonC.addEventListener("click" , buttonC);
-// buttonD.addEventListener("click", buttonD );
-
-
-
-
-// function countdown(){
-//     if(timeLeft == -1){
-//         clearTimeout(timeId);
-//         // Stop the quiz //
-//     } else{
-//         parseInt(time.value) == timeLeft +  0;timeLeft--;
-//     }
-// }
-// countdown();
-
-
-
-
-
-
-function getQuestions() {
-
-    var q = questions[runningQuestion];
-
-
-
-    question.innerHTML = "<p>" + q.question + "</p>";
-
-
-
-    choiceA.innerHTML = q.choiceA;
-
-    choiceB.innerHTML = q.choiceB;
-
-    choiceC.innerHTML = q.choiceC;
-}
-
-
-
-
-
-
-buttonB.addEventListener("click", getQuestions());
-
-function displayQuestion() {
-
-
-}
-
-function showAnswers() {
-
-}
-
-function trackScore() {
-
-}
-
-
-
-
-
-getQuestions();
